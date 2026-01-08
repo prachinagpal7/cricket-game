@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Cricket Game</title>
+</head>
+<body>
+    <div id="game-container">
+        <h1 id="main-heading">CRICKET GAME</h1>
+
+        <div>
+            <button class="choice-button" onclick="
+                let userChoice = 'bat';
+                let computerChoice = computerCh();
+                let finalresult = result(computerChoice, userChoice);
+                displayResult(computerChoice, userChoice, finalresult);
+            ">
+                <img src="images/bat.png" alt="Bat Image" class="choice-image">
+            </button>
+
+            <button class="choice-button" onclick="
+                userChoice = 'ball';
+                computerChoice = computerCh();
+                finalresult = result(computerChoice, userChoice);
+                displayResult(computerChoice, userChoice, finalresult);
+            ">
+                <img src="images/ball.png" alt="Ball Image" class="choice-image">
+            </button>
+
+            <button class="choice-button" onclick="
+                userChoice = 'stump';
+                computerChoice = computerCh();
+                finalresult = result(computerChoice, userChoice);
+                displayResult(computerChoice, userChoice, finalresult);
+            ">
+                <img src="images/stump.png" alt="Stump Image" class="choice-image">
+            </button>
+        </div>
+
+        <div id="div-container">
+            <h3 id="user-move"></h3>
+            <h3 id="computer-move"></h3>
+            <h3 id="result"></h3>
+            <h3 id="score"></h3>
+
+            <button id="reset-button" onclick="localStorage.clear()
+                resetScore();
+            "><bold>Reset</bold></button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

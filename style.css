@@ -1,0 +1,151 @@
+*{
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    text-align: center;
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(images/stadium2.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#game-container {
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    padding: 20px 30px;
+    width: 330px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+#main-heading {
+    font-size: 1.8rem;
+    color: #e9f7ff;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+    text-shadow: 0 0 10px #00eaff;
+    animation: glowText 2s infinite alternate;
+}
+
+@keyframes glowText {
+    from { text-shadow: 0 0 10px #00eaff; }
+    to { text-shadow: 0 0 25px #00ffc8; }
+}
+
+.choice-button {
+    height: 90px;
+    width: 90px;
+    border: none;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #a1ffce, #faffd1);
+    margin: 10px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.choice-button:hover {
+    transform: scale(1.15);
+    box-shadow: 0 0 15px #00ffc8;
+}
+
+.choice-image {
+    height: 65px;
+}
+
+#div-container {
+    background-color: rgba(255, 255, 255, 0.95);
+    color: #111;
+    width: 270px;
+    padding: 15px;
+    border-radius: 16px;
+    margin: 20px auto 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    animation: fadeInUp 1s ease-in-out;
+}
+
+h3 {
+    margin: 8px 0;
+}
+
+#result {
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease-out;
+}
+
+#result.win {
+    color: green;
+    transform: scale(1.1);
+}
+
+#result.lost {
+    color: red;
+    transform: scale(1.1);
+}
+
+#result.tie {
+    color: #ffa600;
+    transform: scale(1.1);
+}
+
+#reset-button {
+    padding: 8px 22px;
+    border: none;
+    color: #fff;
+    font-weight: 500;
+    border-radius: 8px;
+    margin-top: 10px;
+    cursor: pointer;
+    background: linear-gradient(135deg, #89f7fe, #66a6ff);
+    transition: background 0.3s ease, transform 0.2s;
+}
+
+#reset-button:hover {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, #66a6ff, #89f7fe);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 400px) {
+    #game-container {
+        width: 90%;
+    }
+    .choice-button {
+        height: 80px;
+        width: 80px;
+    }
+    .choice-image {
+        height: 55px;
+    }
+}
